@@ -422,6 +422,100 @@
             text-align: left; /* Starts from the far left */
         }
 
+        /* --- Core Features Section --- */
+        .features-section {
+            padding: 2rem 2rem 6rem;
+        }
+
+        .features-container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .features-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 3rem;
+        }
+
+        .features-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .features-header p {
+            color: var(--text-gray);
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .features-row-top {
+            grid-template-columns: 1fr 2fr;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-row-bottom {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border: 1px solid #ededed;
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 86, 255, 0.25);
+            box-shadow: 0 18px 36px -16px rgba(0, 86, 255, 0.18),
+                        0 8px 16px -10px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-visual {
+            background-color: #f7f7f9;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            line-height: 0;
+        }
+
+        .feature-visual img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .features-row-top .feature-visual img {
+            height: 230px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* --- Responsive Design --- */
         @media (max-width: 860px) {
             .mobile-menu-btn {
@@ -438,6 +532,17 @@
             }
             .about-section {
                 padding: 2rem 1.5rem 4rem;
+            }
+            .features-section {
+                padding: 2rem 1.5rem 4rem;
+            }
+            .features-row-top,
+            .features-row-bottom {
+                grid-template-columns: 1fr;
+            }
+            .features-row-top .feature-visual img,
+            .feature-visual img {
+                height: 220px;
             }
         }
 
@@ -457,6 +562,12 @@
             }
             .about-section {
                 padding: 1rem 1rem 3rem;
+            }
+            .features-section {
+                padding: 1rem 1rem 3rem;
+            }
+            .feature-card {
+                border-radius: 16px;
             }
         }
     </style>
@@ -575,6 +686,64 @@
                     <br><br>
                     Our mission is to take the guesswork and friction out of business management. We handle the complexities of your operations, freeing you to focus on what matters most: growing your business efficiently and sustainably.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="features-section">
+        <div class="features-container">
+            <div class="features-header">
+                <h2>Core <span class="text-blue">Features</span></h2>
+                <p>Powerful tools designed to help hotels, supermarkets, and farms streamline their operations and maximize efficiency.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Top Row: narrow + wide -->
+                <div class="features-grid features-row-top">
+                    <div class="feature-card">
+                        <div class="feature-visual">
+                            <img src="ChatGPT Image Jun 30, 2026, 03_47_44 PM.png" alt="Daily Sales & Stock Level Summary">
+                        </div>
+                        <h3>Daily Sales &amp; Stock Level Summary</h3>
+                        <p>Get instant insight into sales and inventory at a glance.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-visual">
+                            <img src="ChatGPT Image Jun 30, 2026, 03_47_55 PM.png" alt="Booking + Orders Tracking">
+                        </div>
+                        <h3>Booking + Orders Tracking</h3>
+                        <p>Track room bookings and service orders in real time.</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: three equal cards -->
+                <div class="features-grid features-row-bottom">
+                    <div class="feature-card">
+                        <div class="feature-visual">
+                            <img src="ChatGPT Image Jun 30, 2026, 03_48_07 PM.png" alt="Barcode Generator">
+                        </div>
+                        <h3>Barcode Generator</h3>
+                        <p>Create QR codes for guests to access your services easily.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-visual">
+                            <img src="ChatGPT Image Jun 30, 2026, 03_48_14 PM.png" alt="Guest Portal">
+                        </div>
+                        <h3>Guest Portal</h3>
+                        <p>See food, laundry, and rooms Menu, pay bills, and leave reviews.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-visual">
+                            <img src="ChatGPT Image Jun 30, 2026, 05_42_11 PM.png" alt="Real-Time WebSocket Sync">
+                        </div>
+                        <h3>Real-Time WebSocket Sync</h3>
+                        <p>See updates across all devices instantly as they happen.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
